@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KervenGame</title>
+</head>
+<body>
+    <div style="width: 100vw; height: 100vh; background-color: red; position: fixed; left:0px;top:0px; display: flex; justify-content: center; align-items: center;">
+        <div id="white_box" style="width:400px; height: 400px; background-color: white; border-radius: 10px; display: flex; justify-content: center; align-items: center;">
+            <h1>0 coins</h1>
+        </div>
+    </div>
+    <audio hidden>
+        <source src="retro-coin-4-236671.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const box = document.querySelector("#white_box");
+        let coins = 0;
+        box.addEventListener('click', ()=>{
+            coins++;
+            let h1 = box.querySelector("h1");
+            h1.innerHTML = `${coins} coins`;
+            document.querySelector("audio").play();
+        });
+    </script>
+</body>
+</html>
